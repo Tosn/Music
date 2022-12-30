@@ -1,0 +1,22 @@
+/**app.wxss**/
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.common-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+$space-min: 10;
+$space-max: 40;
+.m-t {
+  @for $i from $space-min to $space-max {
+    &-#{$i} {
+      margin-top: #{$i}rpx;
+    }
+  }
+}

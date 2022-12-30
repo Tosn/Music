@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="common-title">热门分类</view>
+  <view class="tags-box m-t-10">
+    <view wx:for="{{hotList}}" bindtap="goToTagsPage">
+      {{ item.name }}
+    </view>
+  </view>
+</view>

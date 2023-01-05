@@ -1,0 +1,34 @@
+<!--pages/musicList/music.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view class="music-list-box">
+  <view class="box-bg" style="background: url({{detail.coverImgUrl}}) no-repeat center center / cover;"></view>
+  <view class="sheet-info">
+    <view class="cover">
+      <image src="{{ detail.coverImgUrl }}" mode="widthFix"/>
+    </view>
+    <view class="info">
+      <view class="title">{{ detail.name }}</view>
+      <view class="user">
+        <image src="{{ detail.creator.backgroundUrl }}"></image>
+        <text>{{ detail.creator.nickname }}</text>
+        <text>{{ tools.formatTime(detail.createTime) }}</text>
+      </view>
+    </view>
+    <ellipsis class="desc" lineClamp="2">
+      {{ detail.description }}
+    </ellipsis>
+  </view>
+  <view class="sheet-list">
+    <view class="item" wx:for="{{ musicList }}" wx:key="id">
+      <view class="item-box" bindtap="goToDetailPage" data-id="{{ item.id }}">
+        <text class="no">{{ index + 1 }}</text>
+        <view class="info">
+          <rich-text class="name">{{ item.name }}</rich-text>
+          <rich-text class="name-info">
+            <text>{{ item.ar[0].name }} - {{ item.al.name }}</text>
+          </rich-text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

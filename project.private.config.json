@@ -8,6 +8,27 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/list/list",
+                    "query": "tag=ACG",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/musicList/music",
+                    "query": "id=805407063",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/detail/detail",
+                    "query": "id=30070747",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

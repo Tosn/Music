@@ -1,0 +1,22 @@
+/* components/textEllipsis/ellipsis.wxss */
+.ellipsis-box {
+  rich-text {
+    // -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    &.clamp {
+      @for $i from 1 to 10 {
+        &-#{$i} {
+          -webkit-line-clamp: $i;
+        }
+      }
+    }
+  }
+  .text-button {
+    text-align: right;
+    color: #0c98ec;
+    // font-size: 24rpx;
+  }
+}

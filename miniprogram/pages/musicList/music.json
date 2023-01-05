@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+      "ellipsis": "/components/textEllipsis/ellipsis"
+    },
+    "navigationBarTitleText": "歌单",
+    "navigationStyle": "custom"
+}

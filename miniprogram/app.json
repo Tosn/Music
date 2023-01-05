@@ -2,17 +2,21 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/login/login"
+        "pages/login/login",
+        "pages/list/list",
+        "pages/detail/detail",
+        "pages/musicList/music"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
+        "navigationBarTitleText": "云村",
         "navigationBarTextStyle": "black"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json",
     "useExtendedLib": {
         "weui": true
-    }
+    },
+    "requiredBackgroundModes": ["audio"]
 }

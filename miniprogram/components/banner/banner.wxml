@@ -1,0 +1,10 @@
+<!--components/banner/banner.wxml-->
+<view class="banner-container">
+  <swiper	indicator-dots="true" autoplay>
+    <swiper-item wx:for="{{bannerList}}" wx:key="targetId" bindtap="onTapItem" data-item="{{item}}">
+      <view>
+        <image src="{{item.pic}}"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

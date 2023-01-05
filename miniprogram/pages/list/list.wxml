@@ -1,0 +1,16 @@
+<!--pages/list/list.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view class="container">
+  <view class="common-title" wx:if="{{ tag }}">{{ tag }}</view>
+  <view class="list-box m-t-10">
+    <view wx:for="{{list}}" wx:key="id" data-item="{{ item }}" bindtap="goToMusicList">
+      <view class="cover">
+        <text class="played">{{ tools.formatNo(item.playCount) }}</text>
+        <tags list="{{ item.tags }}"></tags>
+        <image mode="widthFix" src="{{ item.coverImgUrl }}"></image>
+      </view>
+      <rich-text>{{ item.name }}</rich-text>
+    </view>
+  </view>
+</view>
+

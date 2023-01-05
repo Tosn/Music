@@ -1,0 +1,35 @@
+/* pages/detail/detail.wxss */
+.words-container {
+  text-align: center;
+  overflow:  hidden;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 9);
+  top: 10rpx;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, .6);
+
+  .words-box {
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: all .5s;
+  }
+  .view-text {
+    line-height: 70rpx;
+    &.current {
+      color: rgba(255, 255, 255, 1);
+    }
+    &.opacity1 {
+      opacity: .4;
+    }
+    &.opacity2 {
+      opacity: .3;
+    }
+    &.opacity3 {
+      opacity: .1;
+    }
+  }
+}

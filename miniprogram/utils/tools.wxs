@@ -1,0 +1,37 @@
+
+var formatNo = function (n) {
+  if (n >= 100000 && n < 10000000000) {
+    return Math.round(n / 10000) + '万' 
+  }
+
+  if (n >= 10000000000) {
+    return Math.round(n / 100000000) + '亿'
+  }
+
+  return n
+}
+
+var formatTime = function (date) {
+  var _date = getDate(date)
+  var year = _date.getFullYear()
+  var month = _date.getMonth() + 1
+  var day = _date.getDate()
+  var hour = _date.getHours()
+  var minute = _date.getMinutes()
+  var second = _date.getSeconds()
+
+  return (
+    [year, month, day].map(formatNumber).join('/') +
+    ' ' +
+    [hour, minute, second].map(formatNumber).join(':')
+  )
+}
+
+var formatNumber = function (n) {
+  var s = n.toString()
+  return s[1] ? s : '0' + s
+}
+module.exports = {
+  formatNo: formatNo,
+  formatTime: formatTime
+};

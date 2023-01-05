@@ -1,9 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="common-title">热门分类</view>
+  <banner></banner>
+  <view class="common-title m-t-20">热门分类</view>
   <view class="tags-box m-t-10">
-    <view wx:for="{{hotList}}" bindtap="goToTagsPage">
+    <!-- <view wx:for="{{hotList}}" bindtap="goToMusucList" wx:key="name" data-item="{{ item }}">
       {{ item.name }}
-    </view>
+    </view> -->
+    <tags list="{{ hotList }}"></tags>
   </view>
 </view>

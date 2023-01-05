@@ -10,7 +10,7 @@ interface InitData {
 }
 interface InitPage {
   getList: () => void,
-  goToTagsPage: () => void
+  goToMusucList: (e: any) => void
 }
 
 Page<InitData, InitPage>({
@@ -25,11 +25,13 @@ Page<InitData, InitPage>({
   async getList () {
     const ret = <{tags: any[]}>await $get('/playlist/hot')
     this.setData({
-      hotList: ret.tags
+      hotList: ret.tags.map(t => t.name)
     })
   },
-  goToTagsPage () {
-    console.log('1')
+  goToMusucList (e: any) {
+    wx.navigateTo({
+      url: `/pages/list/list?tag=${e.currentTarget.dataset.item.name}`
+    })
   },
   // getUserProfile() {
   //   // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗

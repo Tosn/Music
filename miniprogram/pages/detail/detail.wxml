@@ -1,0 +1,8 @@
+<!--pages/detail/detail.wxml-->
+<view class="words-container">
+  <view class='words-box' style="transform: translateY(-{{70 * lrcIndex}}rpx)">
+    <view wx:for="{{ lrcList }}" wx:key="time" class="view-text {{ lrcIndex === index ? 'current' : '' }} {{ index - 5 === lrcIndex ? 'opacity1' : '' }} {{ index - 6 === lrcIndex ? 'opacity2' : '' }} {{ index - 7 === lrcIndex ? 'opacity3' : '' }}">
+      {{ item.desc }}
+    </view>
+  </view>
+</view>

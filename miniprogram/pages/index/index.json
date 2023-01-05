@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "banner": "/components/banner/banner",
+    "tags": "/components/tags/tags"
+  }
 }

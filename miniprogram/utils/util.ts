@@ -19,6 +19,14 @@ const formatNumber = (n: number) => {
   return s[1] ? s : '0' + s
 }
 
+export const goToDetailPage = (e: any) => {
+  const id = e.currentTarget.dataset.id
+  wx.navigateTo({
+    url: `/pages/detail/detail?id=${id}`
+  })
+}
+
+
 export const request = (url: string, data?: Record<string, any>, method='POST', options?: any) => new Promise((resolve, reject) => {
   wx.request({
     url: `${API_PREFIX}${url}`,

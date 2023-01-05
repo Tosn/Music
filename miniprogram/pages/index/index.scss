@@ -1,14 +1,16 @@
 /**index.wxss**/
 .tags-box {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10rpx;
-  view {
-    padding: 5rpx 10rpx;
-    background-color: rgba(0, 0, 0, .8);
-    color: #fff;
-    font-size: 22rpx;
-    text-align: center;
+  .tags {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10rpx;
+    text {
+      padding: 5rpx 10rpx;
+      background-color: rgba(0, 0, 0, .8);
+      color: #fff;
+      font-size: 22rpx;
+      text-align: center;
+    }
   }
 }
 

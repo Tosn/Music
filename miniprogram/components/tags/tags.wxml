@@ -1,0 +1,4 @@
+<!--components/tags/tags.wxml-->
+<view class="tags">
+  <text wx:for="{{ list }}" wx:for-item="child" wx:key="child" data-item="{{ child }}" bindtap="goToSheetList">{{ child }}</text>
+</view>

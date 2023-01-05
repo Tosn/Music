@@ -1,0 +1,7 @@
+<!--components/textEllipsis/ellipsis.wxml-->
+<view class="ellipsis-box">
+  <rich-text class="content {{ showAll ?  '' : 'clamp-' + lineClamp }}">
+    <slot></slot>
+  </rich-text>
+  <rich-text class="text-button" bindtap="toggleSlide">{{ showAll ? '收起' : '展开' }}</rich-text>
+</view>

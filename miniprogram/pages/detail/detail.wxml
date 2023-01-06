@@ -1,8 +1,17 @@
 <!--pages/detail/detail.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
 <view class="words-container">
   <view class='words-box' style="transform: translateY(-{{70 * lrcIndex}}rpx)">
     <view wx:for="{{ lrcList }}" wx:key="time" class="view-text {{ lrcIndex === index ? 'current' : '' }} {{ index - 5 === lrcIndex ? 'opacity1' : '' }} {{ index - 6 === lrcIndex ? 'opacity2' : '' }} {{ index - 7 === lrcIndex ? 'opacity3' : '' }}">
       {{ item.desc }}
     </view>
+  </view>
+  <view class="audio-slidebox">
+    <text>{{ tools.formatMusicTime(playTime) }}</text>
+    <slider class="" min="0" max="{{ totalTime }}" step="1" value="{{ playTime }}"
+      backgroundColor="#e9e9e9" block-size="4" block-color="#ffffff" bindchange="setPlayTime">
+    
+    </slider>   
+    <text>{{ tools.formatMusicTime(totalTime) }}</text>
   </view>
 </view>

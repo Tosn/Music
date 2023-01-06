@@ -31,7 +31,19 @@ var formatNumber = function (n) {
   var s = n.toString()
   return s[1] ? s : '0' + s
 }
+
+
+var formatMusicTime = function (time) {
+  var min = parseInt(time / 60)
+  var sec = time % 60
+  var min_str = (min < 10) ? '0' + min : min
+  var sec_str = (sec < 10) ? '0' + sec : sec
+  return min_str + ':' + sec_str
+}
+
 module.exports = {
   formatNo: formatNo,
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatMusicTime: formatMusicTime
 };
+

@@ -15,6 +15,7 @@ Page<InitData, InitMethods>({
     data: {
       lrcIndex: 0, // 歌词当前第几个索引
       playTime: 0,
+      totalTime: 0,
       id: '',
       musicDetail: {
         name: '',
@@ -92,14 +93,15 @@ Page<InitData, InitMethods>({
       // 设置了 src 之后会自动播放
       backgroundAndioManager.src = this.data.musicInfo.url
       setInterval(() => this.listenerAudioPlay(), 1000)
-      
-      // console.log('can i play')
-      // backgroundAndioManager.onCanplay = (l) => {
-      //   console.log('llll', l)
-      // }
-      // backgroundAndioManager.onPlay = (listener) => {
-      //   console.log(listener)
-      // }
+    },
+    setPlayTime (e: any) {
+      // e.detail.value
+      const backgroundAndioManager = wx.getBackgroundAudioManager()
+      backgroundAndioManager.seek(e.detail.value)
+      this.listenerAudioPlay()
+      this.setData({
+        playTime: e.detail.value
+      })
     },
     listenerAudioPlay () {
       const backgroundAndioManager = wx.getBackgroundAudioManager()
@@ -107,6 +109,9 @@ Page<InitData, InitMethods>({
       this.setData({
         playTime: currentTime
       })
+      this.setData({
+          totalTime: Math.floor(backgroundAndioManager.duration)
+        })
       for (let i = 0; i < this.data.lrcList.length; i++) {
         if (currentTime === this.data.lrcList[i].time) {
           this.setData({
